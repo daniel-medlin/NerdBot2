@@ -63,7 +63,6 @@ function nrCommand(message, client){//messages recieved here have already been v
 			message.delete()
 			logCommand(client, "User", message);
 			message.channel.send(`<@${uid}> be praised!`)
-				.then(msg => setTimeout(function(){msg.delete()}, 1000*3))
             	.catch(err => console.error(`${timestamp()} - Failed to send humble message: ${err}`));
 		break;
 		case 'joke'://!nrJoke

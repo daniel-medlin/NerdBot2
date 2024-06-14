@@ -3,12 +3,12 @@ const { EmbedBuilder } = require('discord.js');
 const ud = require('./userData.js');
 const { timestamp } = require('./timestamp.js');
 
-exports.rulesAdd = async function ruleReaction(reaction, member, user){ //user accepted rules by reacting on message.
+exports.rulesAdd = function ruleReaction(reaction, member, user){ //user accepted rules by reacting on message.
     var client = reaction.client;
     if (member.roles.cache.find(r => r.name === "New User")){
         if(reaction.emoji.name === '👍'){
-            await member.roles.remove(vars.roleNewUser);
-            await member.roles.add(vars.roleMember);
+            member.roles.add(vars.roleMember);
+            member.roles.remove(vars.roleNewUser);
             console.log(`${timestamp()} - ${user.username} has been added to the Members role.`);
             ud.deleteUser(user.id)
             buildWelcomeEmbed(member, user, user.id, client)

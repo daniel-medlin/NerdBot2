@@ -20,11 +20,11 @@ function help(channel){
 			{name: "**Staff Commands**", value:"\u200b"},
 			{name: "!nrDelete <number to delete>", value:"Deletes requested number of posts from the current channel"},
 			{name: "!nrParrot \"statement\"", value:"Make the bot say what you say in the quotes following the command"},
-			{name: "!nrPromote <@username> [role]", value:"Add/Remove tagged user from the role.  use !nrPromote to see valid roles"},
-			{name: "!nrWarn <@user> [reason]", value:"Warn a member, must mention the member with the reason optional."},
-			{name: "!nrKick <@user> [reason]", value:"Kick a member, must mention the member with the reason optional."},
-			{name: "!nrBan <@user> [reason]", value:"Ban a member, must mention the member with the reason optional."},
-			{name: "!nrClear <log ID>", value:"Clear log with provided ID"},
+			//{name: "!nrPromote <@username> [role]", value:"Add/Remove tagged user from the role.  use !nrPromote to see valid roles"},
+			//{name: "!nrWarn <@user> [reason]", value:"Warn a member, must mention the member with the reason optional."},
+			//{name: "!nrKick <@user> [reason]", value:"Kick a member, must mention the member with the reason optional."},
+			//{name: "!nrBan <@user> [reason]", value:"Ban a member, must mention the member with the reason optional."},
+			//{name: "!nrClear <log ID>", value:"Clear log with provided ID"},
 			{name: "\u200b", value: "\u200b"},
 		)
 		.setFooter({ text:"To request more commands, drop a suggestion with !nrSuggest", iconURL: vars.NRicon});

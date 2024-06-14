@@ -48,7 +48,7 @@ function deleteUser(uid){ //remove users from .json
 }
 exports.checkUsers = function checkUsers(client){ //hourly, check members of the new users group.  Compare that list of users to the users we have in the .json file.  Anyone older than 24 hours kick
 	setInterval(function(){
-		console.log("Checking for expired users - " + Date());
+		//console.log("Checking for expired users - " + Date());
 		let now = new Date();
 		var jsonData = fs.readFileSync(fileName)
 		var users = JSON.parse(jsonData).users;
@@ -69,7 +69,7 @@ exports.checkUsers = function checkUsers(client){ //hourly, check members of the
 					if (diffDay >= 1){
 						
 						nRevolt.members.cache.get(uid).kick("Failed to accept rules within 24 hours of joining");
-						console.log(name + " has been kicked for inactivity - " + timestamp());
+						console.log(timestamp() +" - " +name + "has been kicked for inactivity.");
 						deleteUser(uid);
 					}
 				} //No user match

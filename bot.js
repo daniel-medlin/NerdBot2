@@ -58,7 +58,7 @@ client.on('guildMemberAdd', (member) => { //add newly joined members to the new 
 	let Bot = member.user.bot;
 	if(!Bot){ //if new user isn't a bot then give the newUser role and add to the userData.json
 		member.roles.add(vars.roleNewUser)    //id for "New User' role on server
-			.then(console.log(timestamp() + " - " + member.user.username+" has joined "+ member.guild.name + " with the New User role! - "))
+			.then(console.log(timestamp() + " - " + member.user.username+" has joined "+ member.guild.name + " with the New User role!"))
 			.then(ud.storeNewUser(member.user.id, member.user.username))
 			.catch(err => console.error(timestamp() + ` - Something bad happended: ${err}`))
 	//		*/		
@@ -67,7 +67,7 @@ client.on('guildMemberAdd', (member) => { //add newly joined members to the new 
 
 client.on('guildMemberRemove', (member) => { // member left server
 	ud.deleteUser(member.id); //if the member leaving is in my userData.json, I don't want them there anymore.
-	console.log(`${timestamp()} - ${member.displayName} has left the server.}`)
+	console.log(`${timestamp()} - ${member.displayName} has left the server.`)
 });
 
 client.on('messageReactionAdd', async (reaction, user) =>{
